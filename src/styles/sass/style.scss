@@ -1,0 +1,447 @@
+//FONT STYLE
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100&family=Raleway:wght@500&display=swap');
+
+@mixin backgroundImage ($background-image) {
+    background-image: $background-image;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+@mixin head-title {
+    color: #999;
+    font-size: 2.4rem;
+    font-weight: 100;
+    font-family: 'Lato', sans-serif;
+}
+@mixin under-line {
+    border-bottom: 2px solid #2626e2;
+    border-radius: 20px;
+    width: 3rem;
+    margin: .8rem auto;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Raleway', sans-serif;
+}
+html {
+    scroll-behavior: smooth
+}
+
+//HEADER
+header {
+    @include backgroundImage(url(/src/img/slider/1.jpg));
+    height: 100vh;
+    position: relative;
+    // z-index: 99;
+    nav {
+        position: fixed;
+        display:flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 4rem;
+        right: 0;
+        left: 0;
+        z-index: 99;
+    }
+    .navigation {
+        margin-right: 5rem;
+        li {
+            display: inline-block;
+            padding: .5rem .8rem;
+        }
+        a {
+            text-decoration: none;
+            color: #fff;
+            font-size: .8rem;
+            font-weight: 900;
+            &:hover {
+                color: #2626e2;
+            }
+        }
+    }
+    
+}
+
+//HOME
+#home {
+    position: absolute;
+    text-align: center;
+    left: 10%;
+    right: 10%;
+    top: 40%;
+    color: #fff;
+    h1 {
+        text-align: center;
+        color: #2626e2;
+        font-size: 4rem;
+    }
+    p {
+        font-size: 1.8rem;
+        width: 70%;
+        margin: 1.8rem auto;
+    }
+}
+
+//ABOUT US
+#about {
+    .head-about {
+        font-size: 2rem;
+        text-align: center;
+        margin-top: 5rem;
+        span {
+            color: #2626e2;
+        }
+        h5 {
+            @include head-title()
+        }
+        .line {
+           @include under-line()
+        }
+    }
+    .cards {
+        display: flex;
+        justify-content: center;
+        padding: 0 4rem;
+        .card {
+            width: 50%;
+            margin: 2rem;
+            .title h4{
+                margin: .5rem 0;
+                color: #333;
+            }
+            .title h5 {
+                color: #999;
+                font-weight: 100;
+                font-size: 1.2rem;
+            }
+        }
+        img {
+            width: 100%;
+        }
+        ul {
+            margin-top: 1rem;
+            li {
+                list-style-type: none;
+                line-height: 2;
+                font-size: .8rem;
+                color: #999;
+            }
+        }
+    }
+}
+
+//STATS 
+#stats {
+    @include backgroundImage(url(/src/img/parallax/1.jpg));
+    margin: 8rem auto;
+    .row {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        padding: 6rem 5rem;
+        text-align: center;
+        .column {
+            display: block;
+            margin: 20px auto;
+            i {
+                font-size: 5rem;
+                color: #fff;
+            }
+            h2 {
+                
+                padding: 1rem .8rem ;
+                color: #fff;
+                font-size: 2.5rem;
+            }
+            p {
+                font-size: 1.2rem;
+                color: #fff;
+            }
+        }
+    }
+}
+
+//COURSE
+#course {
+    .head-course {
+        text-align: center;
+        h5 {
+            @include head-title()
+        }
+        .line {
+           @include under-line()
+        }
+    }
+    .cards {
+        display: flex;
+        justify-content: center;
+        overflow-y: hidden;
+        margin: 3rem auto;
+        .card {
+            position: relative;
+            width: 100%;
+            img {
+                width: 100%;
+                height: auto;
+                vertical-align: middle;
+            }
+            filter: grayscale(100%);
+            &:hover {
+                cursor: pointer;
+                transform: translateY(-25%);
+                transition: transform .7s ease;
+                filter: grayscale(0);
+            }   
+            .subtitle {
+                position: absolute;
+                padding-left: 1rem;
+                p {
+                    a {
+                        text-decoration: none;
+                        font-size: 1.2rem;
+                        font-weight: 600;
+                        color: #333;
+                        letter-spacing: .1rem;
+
+                        &:hover {
+                            color: #2626e2;
+                        }
+                    }
+                }
+                .see-more {
+                    a {
+                        color: #999;
+                        font-size: 1rem;
+                        font-weight: 100;
+                        line-height: 1.5;
+                    }
+                }
+            }
+        }
+    }
+}
+
+//ADMISSION
+#admission {
+    .head-title {
+        text-align: center;
+        h5 {
+            @include head-title()
+        }
+        .line {
+            @include under-line()
+        }
+    }
+    .cards {
+        display: grid;
+        grid-template-columns: 50% 50%;
+        justify-content: center;
+        grid-column-gap: 90px;
+        grid-row-gap: 50px;
+        inset: center;
+        margin: 8rem 7rem;
+        
+        .card {
+            display: flex;
+            justify-content: center;
+            .photo {
+                width: 70%;
+                img {
+                    width: 100%;
+                    height: auto;
+                }
+            }
+            .subtitle {
+                padding-left: .5rem;
+                width: 70%;
+                h3 {
+                    margin: .5rem 0;
+                    color: #333;
+                }
+                small {
+                    color: #2626e2;
+                }
+                p {
+                    font-size: .8rem;
+                    margin: .8rem 0;
+                    color: #999;
+                }
+                a {
+                    text-decoration: none;
+                    color: #999;
+                    &:hover {
+                        color: #2626e2;
+                    }
+                }
+            }
+        }
+    }
+}
+
+//contact 
+#contact {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    padding: rem 0;
+    background-color: #111;
+    color: #fff;
+    
+    .address {
+        line-height: 1.5;
+    }
+    .info > div {
+        margin: 2rem 0;
+        h1 {
+            font-size: 2.5rem;
+        }
+        small {
+            font-size: 1rem;
+            padding-left: .5rem;
+        }
+        a {
+            text-decoration: none;
+            line-height: 2;
+            color: #fff;
+            &:hover {
+                color: #2626e2;
+            }
+        } 
+        .fab{
+            width: 40px;
+            &:hover {
+                color: #2626e2;
+            }
+        }
+    }
+    form {
+        display: flex;
+        flex-direction: column;
+        max-width: 555px;
+        padding: 12px;
+        legend {
+            margin: 12px 0;
+        }
+        input {
+            outline: none;
+            border: none;
+            margin: 5px 0;
+        }
+        #name, #email, #submit {
+            min-height: 30px;
+            min-width: 257px;
+            padding: 12px;
+        }
+        #submit {
+            background-color: #2626e2;
+            color: #999;
+            font-weight: 600;
+            letter-spacing: 2px;
+            cursor: pointer;
+        }
+        #message {
+            max-width: 500px;
+            min-width: 257px;
+            min-height: 157px;
+            padding: 12px;
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    html {
+        font-size: 1rem;
+        overflow-x: hidden;
+    }
+    .logo img{
+        width: 40px !important;
+        position: absolute;
+        top: 8px;
+        left: 12px;
+        z-index: 100;
+    }
+    .navigation {
+        position: absolute;
+        top: 0px;
+        left: 0;
+        transform: translateX(100%);
+        width: 100%;
+        transition: transform .7s;
+        ul {
+            background-color: rgba(255, 255, 255, .8);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+            li a{
+            color: #2626e2;
+            }
+        }
+    }
+    .active-navigation {
+        transform: translateX(0%);
+    }
+    .menu-icon {
+        position: fixed;
+        top: 12px;
+        right: 18px;
+        .layer {
+            background-color: #111;
+            height: 3px;
+            width: 18px;
+            margin: 3px 0;
+            transition: all .3s;
+        }
+    }
+    .change .layer1 {
+        transform: rotate(47deg) translate(8px);
+    }
+    .change .layer2 {
+        opacity: 0;
+    }
+    .change .layer3 {
+        transform: rotate(-51deg) translate(8px);
+    }
+    header {
+        height: 50vh;
+    } 
+    #home {
+        top: 0;
+        left: 0;
+        transform: translateY(50%);
+        width: 100%;
+        h1, p {
+            font-size: 1.5rem;
+            width: 100%;
+        }
+    }
+    #about {
+        .cards {
+            padding: 0;
+            .card {
+                width: 100%;
+            }
+        }
+    }
+    #contact {
+        text-align: center;
+    }
+    .cards {
+        padding: 0 10px;
+        flex-wrap: wrap;
+    }
+    #admission {
+        .cards {
+            grid-template-columns: 100%;
+            width: 100%;
+            text-align: center;
+            margin: 28px auto;
+        }
+    }
+}
