@@ -17,6 +17,7 @@ header {
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
+  width: 100%;
   height: 100vh;
   position: relative;
 }
@@ -150,6 +151,7 @@ header .navigation a:hover {
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
+  width: 100%;
   margin: 8rem auto;
 }
 
@@ -496,8 +498,8 @@ header .navigation a:hover {
     height: 3px;
     width: 18px;
     margin: 3px 0;
-    -webkit-transition: all .3s;
-    transition: all .3s;
+    -webkit-transition: all .5s;
+    transition: all .5s;
   }
   .change .layer1 {
     -webkit-transform: rotate(47deg) translate(8px);
@@ -512,6 +514,7 @@ header .navigation a:hover {
   }
   header {
     height: 50vh;
+    background-attachment: scroll;
   }
   #home {
     top: 0;
@@ -529,6 +532,9 @@ header .navigation a:hover {
   }
   #about .cards .card {
     width: 100%;
+  }
+  #stats {
+    background-attachment: scroll;
   }
   #contact {
     text-align: center;

@@ -7,6 +7,7 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
+    width: 100%;
 }
 @mixin head-title {
     color: #999;
@@ -36,7 +37,7 @@ header {
     @include backgroundImage(url(/src/img/slider/1.jpg));
     height: 100vh;
     position: relative;
-    // z-index: 99;
+
     nav {
         position: fixed;
         display:flex;
@@ -396,7 +397,7 @@ header {
             height: 3px;
             width: 18px;
             margin: 3px 0;
-            transition: all .3s;
+            transition: all .5s;
         }
     }
     .change .layer1 {
@@ -410,6 +411,7 @@ header {
     }
     header {
         height: 50vh;
+        background-attachment:scroll;
     } 
     #home {
         top: 0;
@@ -428,6 +430,9 @@ header {
                 width: 100%;
             }
         }
+    }
+    #stats {
+        background-attachment: scroll;
     }
     #contact {
         text-align: center;
